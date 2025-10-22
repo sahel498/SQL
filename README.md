@@ -1,12 +1,12 @@
-# Scenario: 
+ # 🎯 Scenario
 
 Data Scientist at USDA (United States Department of Agriculture)
 
-## Context: 
+## 💡 Context 
 
 You are a Data Scientist working at the USDA. Your department has been tracking the production of various agricultural commodities across different states. 
 
-## datasets include:
+## 📊 datasets include
 
 `milk_production`, `cheese_production`, `coffee_production`, `honey_production`, `yogurt_production`, and a `state_lookup` table. 
 
@@ -14,7 +14,7 @@ You are a Data Scientist working at the USDA. Your department has been tracking 
 
 - Your manager has requested that you generate insights from this data to aid in future planning and decision-making. You'll need to use SQL queries to answer the questions that come up in meetings, reports, or strategic discussions.
 
-## Objectives:
+## 🚀 Objectives
 
 - Assess state-by-state production for each commodity.
 
@@ -22,7 +22,7 @@ You are a Data Scientist working at the USDA. Your department has been tracking 
 
 - Offer data-backed suggestions for areas that may need more attention.
 
-## Steps to Get Started:
+## 🔍 Steps to Get Started
 
 1. SQLite Setup: Download and install SQLite on your own computer if you haven't already.
 
@@ -31,7 +31,7 @@ You are a Data Scientist working at the USDA. Your department has been tracking 
 3. Practice Makes Perfect: Use the sample questions to get comfortable with the data and the types of questions you'll face in the final project/exam.
 
 
-## Setting Up for the Final Project:
+## 🏗️ Setting Up for the Final Project
 - [Go To coursera WebSite](https://www.coursera.org/learn/sql-for-data-science/supplement/hfPAm/final-project-instructions-scripts-datasets)
 
 1. Make sure SQLite is installed on your computer: [SQLite Installation](https://www.sqlite.org/download.html)
@@ -108,3 +108,107 @@ You are a Data Scientist working at the USDA. Your department has been tracking 
 11. Repeat this process until you have created all tables and imported the data for all tables.
 
 12. You may need to clean up the data. To do so, the run statements are at the bottom of this page.
+
+## 💻 Script to Create Tables
+```
+CREATE TABLE cheese_production (
+    Year INTEGER,
+    Period TEXT,
+    Geo_Level TEXT,
+    State_ANSI INTEGER,
+    Commodity_ID INTEGER,
+    Domain TEXT,
+    Value INTEGER
+);
+
+
+CREATE TABLE honey_production (
+    Year INTEGER,
+    Geo_Level TEXT,
+    State_ANSI INTEGER,
+    Commodity_ID INTEGER,
+    Value INTEGER
+);
+
+
+CREATE TABLE milk_production (
+    Year INTEGER,
+    Period TEXT,
+    Geo_Level TEXT,
+    State_ANSI INTEGER,
+    Commodity_ID INTEGER,
+    Domain TEXT,
+    Value INTEGER
+);
+
+
+CREATE TABLE coffee_production (
+    Year INTEGER,
+    Period TEXT,
+    Geo_Level TEXT,
+    State_ANSI INTEGER,
+    Commodity_ID INTEGER,
+    Value INTEGER
+);
+
+
+CREATE TABLE egg_production (
+    Year INTEGER,
+    Period TEXT,
+    Geo_Level TEXT,
+    State_ANSI INTEGER,
+    Commodity_ID INTEGER,
+    Value INTEGER
+);
+
+CREATE TABLE state_lookup (
+    State TEXT,
+    State_ANSI INTEGER
+);
+
+
+CREATE TABLE yogurt_production (
+    Year INTEGER,
+    Period TEXT,
+    Geo_Level TEXT,
+    State_ANSI INTEGER,
+    Commodity_ID INTEGER,
+    Domain TEXT,
+    Value INTEGER
+);
+
+```
+
+## 🧹 Clean Up the Data
+Once you import the data via the CSV file, you may need to remove the commas from the values to format the data properly. To do so, run the following statement for each table. 
+
+Value format update for the Cheese Production Table
+
+UPDATE cheese_production SET value = REPLACE(value, ',', '');
+
+
+Value format update for the Honey Production Table
+
+UPDATE honey_production SET value = REPLACE(value, ',', '');
+
+
+Value format update for the Milk Production Table
+
+UPDATE milk_production SET value = REPLACE(value, ',', '');
+
+
+Value format update for the Coffee Production Table
+
+UPDATE coffee_production SET value = REPLACE(value, ',', '');
+
+
+Value format update for the Egg Production Table
+
+UPDATE egg_production SET value = REPLACE(value, ',', '');
+
+
+Value format update for the Yogurt Production Table
+
+UPDATE yogurt_production SET value = REPLACE(value, ',', '');
+
+
